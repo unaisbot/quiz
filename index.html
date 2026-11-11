@@ -28,7 +28,7 @@ input[type=text],input[type=email]{width:100%;padding:13px;border:1px solid #cfd
 input:focus{border-color:var(--green);box-shadow:0 0 0 3px #14532d18}
 .help{font-size:12px;color:var(--muted);margin:7px 0 0}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
 .progress-row{display:flex;align-items:center;gap:15px;margin-bottom:18px}.progress{height:8px;flex:1;background:#e8efe6;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0;transition:width .2s}.counter{white-space:nowrap;font-size:13px;font-weight:800;color:var(--muted)}
-.question{border:1px solid var(--line);border-radius:11px;padding:20px;margin:12px 0}.q-label{font-size:11px;color:var(--green);font-weight:800;letter-spacing:.12em}.question h3{font-size:19px;line-height:1.4;margin:7px 0 15px}.option{display:flex;align-items:flex-start;gap:11px;border:1px solid var(--line);border-radius:8px;padding:11px 13px;margin:8px 0;cursor:pointer}.option:hover{border-color:#9cbd91;background:#f9fcf8}.option:has(input:checked){border-color:var(--green);background:var(--pale)}.option input{margin-top:5px;accent-color:var(--green)}.option span{font-size:14px}
+.question{border:1px solid var(--line);border-radius:11px;padding:20px;margin:16px 0;background:#fff;scroll-margin-top:100px}.q-label{font-size:11px;color:var(--green);font-weight:800;letter-spacing:.12em}.question h3{font-size:19px;line-height:1.4;margin:7px 0 15px}.option{display:flex;align-items:flex-start;gap:11px;border:1px solid var(--line);border-radius:8px;padding:11px 13px;margin:8px 0;cursor:pointer}.option:hover{border-color:#9cbd91;background:#f9fcf8}.option:has(input:checked){border-color:var(--green);background:var(--pale)}.option input{margin-top:5px;accent-color:var(--green)}.option span{font-size:14px}
 .notice{display:none;padding:13px 15px;border-radius:8px;margin-top:15px;font-size:14px}.error{background:#fff1ee;color:#8a2417;border:1px solid #f3c5bd}.success{background:#eef8ef;color:#1c5b2b;border:1px solid #bfdfc4}
 .result{text-align:center}.score{font:800 clamp(48px,8vw,72px) Manrope;color:var(--green);line-height:1.1;margin:14px}.result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.result-stats div{background:var(--pale);padding:14px;border-radius:9px}.result-stats strong{display:block;color:var(--green);font:800 22px Manrope}.certificate{padding:15px;background:#f4f8ed;border:1px solid #dbe9d2;border-radius:9px;text-align:left;margin:18px 0}
 .footer{background:#102d1b;color:#dce8dd;padding:48px 22px 20px}.footer-grid{max-width:1160px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}.footer-brand{display:flex;align-items:center;gap:11px;color:#fff;font:800 13px/1.3 Manrope}.footer-brand img{width:54px;height:54px;object-fit:contain;background:white;border-radius:50%;padding:3px}.footer p,.footer a{color:#b8cbbb;font-size:13px}.footer a:hover{color:#e2f0d7}.footer h3{font-size:12px;color:white;letter-spacing:.1em;text-transform:uppercase}.footer-bottom{max-width:1160px;margin:28px auto 0;border-top:1px solid #34533c;padding-top:15px;text-align:center;color:#9fb6a3;font-size:12px}
@@ -43,11 +43,11 @@ input:focus{border-color:var(--green);box-shadow:0 0 0 3px #14532d18}
 <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 </div></header>
 <div class="hero-wrap"><section class="hero"><div class="hero-content"><span class="eyebrow">TBARC India · Biodiversity learning</span><h1>How well do you know nature?</h1><p>Take the TBARC Biodiversity Quiz. Explore ecology, species, wetlands and conservation through a fresh set of questions.</p><a class="btn light" href="#quiz-start">Start the challenge →</a></div></section></div>
-<section class="section"><div class="container"><span class="eyebrow" style="color:var(--green)">Learn · Think · Conserve</span><h2>A little knowledge can make a big difference.</h2><p class="muted">Answer 20 multiple-choice questions selected at random from the TBARC question bank. Your score is checked securely and emailed after submission.</p>
-<div class="stats"><div class="stat"><strong>20 Questions</strong><span>Random selection and order</span></div><div class="stat"><strong>English</strong><span>Quiz language</span></div><div class="stat"><strong>Certificate</strong><span>For scores of 70% or above</span></div></div></div></section>
-<section class="section band" id="quiz-start"><div class="container"><span class="eyebrow" style="color:var(--green)">Participant details</span><h2>Get ready for the challenge</h2><p class="muted">Enter your name and email. Your result and certificate, if earned, will be sent to this address.</p>
-<div class="panel" id="details-panel"><form id="participant-form"><div class="grid"><div class="field"><label for="participant-name">Full name *</label><input id="participant-name" type="text" maxlength="100" autocomplete="name" required placeholder="Your full name"></div><div class="field"><label for="participant-email">Email address *</label><input id="participant-email" type="email" maxlength="160" autocomplete="email" required placeholder="you@example.com"></div></div><p class="help">Use an email address you can access. No account or registration fee is required.</p><div class="row"><span class="help">Your details are used to issue and email your quiz result.</span><button class="btn" type="submit">Begin quiz →</button></div></form></div>
-<div class="panel" id="quiz-panel" hidden><div class="progress-row"><div class="progress"><div id="progress-bar"></div></div><span class="counter" id="counter">Question 1 of 20</span></div><div id="question-area"></div><div class="row"><button class="btn soft" id="previous" type="button">← Previous</button><button class="btn" id="next" type="button">Next question →</button><button class="btn" id="submit" type="button" hidden>Submit answers →</button></div><p class="help">You can revisit questions before submitting. All 20 questions must be answered.</p></div>
+<section class="section"><div class="container"><span class="eyebrow" style="color:var(--green)">Learn · Think · Conserve</span><h2>A little knowledge can make a big difference.</h2><p class="muted">Answer 10 multiple-choice questions selected at random from the TBARC question bank. All 10 questions are displayed on this page.</p>
+<div class="stats"><div class="stat"><strong>10 Questions</strong><span>Random selection and order</span></div><div class="stat"><strong>English</strong><span>Quiz language</span></div><div class="stat"><strong>Certificate</strong><span>For scores of 70% or above</span></div></div></div></section>
+<section class="section band" id="quiz-start"><div class="container"><span class="eyebrow" style="color:var(--green)">TBARC Biodiversity Quiz</span><h2>Test your biodiversity knowledge</h2><p class="muted">Answer all 10 multiple-choice questions below. All questions are displayed together, and your score will appear after submission. A certificate is available for scores of 70% or above.</p>
+<div class="panel" id="quiz-panel"><div class="progress-row"><div class="progress"><div id="progress-bar"></div></div><span class="counter" id="counter">10 questions</span></div><div id="question-area"></div><div class="row"><span class="help">Please select one answer for every question.</span><button class="btn" id="submit" type="button">Submit answers →</button></div></div>
+<div class="panel" id="claim-panel" hidden><span class="eyebrow" style="color:var(--green)">Certificate eligibility confirmed</span><h2>Congratulations! You are eligible for a certificate.</h2><p class="muted">Submit your name and email address below. We will use these details to prepare your certificate, register it in the TBARC verification portal and email your PDF certificate.</p><form id="claim-form"><div class="grid"><div class="field"><label for="participant-name">Full name *</label><input id="participant-name" type="text" maxlength="100" autocomplete="name" required placeholder="Enter your name as it should appear on the certificate"></div><div class="field"><label for="participant-email">Email address *</label><input id="participant-email" type="email" maxlength="160" autocomplete="email" required placeholder="you@example.com"></div></div><p class="help">Please check your email address carefully. Your certificate will be sent there.</p><div class="row"><span class="help">Your details are requested only because you qualified.</span><button class="btn" id="claim-submit" type="submit">Submit details &amp; receive certificate →</button></div></form></div>
 <div class="notice error" id="error" role="alert"></div><div class="notice success" id="status" role="status"></div><div class="panel result" id="result" hidden></div>
 </div></section>
 <footer class="footer"><div class="footer-grid">
@@ -61,7 +61,7 @@ input:focus{border-color:var(--green);box-shadow:0 0 0 3px #14532d18}
 /* Paste your deployed Apps Script Web App URL ending in /exec below. */
 const TBARC_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyoj3D0VDXmvx9Qbl3ihFCWcelmCHTK2bFLFOD5SFq0kry0ZkPyXv2B4MelqIw4UaRl2g/exec".trim();
 const QUESTION_BANK = [{"id": "q01", "question": "Which international agreement is dedicated to the conservation of biological diversity?", "options": [{"value": "A", "label": "Montreal Protocol"}, {"value": "B", "label": "Ramsar Convention"}, {"value": "C", "label": "CITES"}, {"value": "D", "label": "Convention on Biological Diversity"}]}, {"id": "q02", "question": "Which is an important ecosystem service provided by wetlands?", "options": [{"value": "A", "label": "Plastic production"}, {"value": "B", "label": "Fossil-fuel formation"}, {"value": "C", "label": "Carbon storage"}, {"value": "D", "label": "Complete prevention of floods"}]}, {"id": "q03", "question": "What is an endemic species?", "options": [{"value": "A", "label": "A species that migrates seasonally"}, {"value": "B", "label": "A species naturally restricted to a particular geographic area"}, {"value": "C", "label": "A species introduced to a new region"}, {"value": "D", "label": "A species found on every continent"}]}, {"id": "q04", "question": "Which is the correct format for a scientific species name?", "options": [{"value": "A", "label": "Both words capitalised"}, {"value": "B", "label": "Genus capitalised; specific epithet lowercase"}, {"value": "C", "label": "Genus lowercase; specific epithet capitalised"}, {"value": "D", "label": "Both words lowercase"}]}, {"id": "q05", "question": "What is nitrogen fixation?", "options": [{"value": "A", "label": "Release of oxygen during photosynthesis"}, {"value": "B", "label": "Breakdown of rocks by weathering"}, {"value": "C", "label": "Loss of water from leaves"}, {"value": "D", "label": "Conversion of atmospheric nitrogen into biologically usable forms"}]}, {"id": "q06", "question": "What is the main role of decomposers in an ecosystem?", "options": [{"value": "A", "label": "Prevent herbivory"}, {"value": "B", "label": "Break down dead matter and recycle nutrients"}, {"value": "C", "label": "Capture sunlight for plants"}, {"value": "D", "label": "Produce rainfall"}]}, {"id": "q07", "question": "Which organisms are primary producers in many freshwater food webs?", "options": [{"value": "A", "label": "Small fish"}, {"value": "B", "label": "Phytoplankton"}, {"value": "C", "label": "Dragonfly larvae"}, {"value": "D", "label": "Water snakes"}]}, {"id": "q08", "question": "A higher Shannon diversity index in comparable samples generally indicates:", "options": [{"value": "A", "label": "Lower species richness in every case"}, {"value": "B", "label": "Greater diversity through richness and/or evenness"}, {"value": "C", "label": "Absence of rare species"}, {"value": "D", "label": "Greater average body size"}]}, {"id": "q09", "question": "An invasive alien species is generally:", "options": [{"value": "A", "label": "A non-native species that spreads and causes, or is likely to cause, harm"}, {"value": "B", "label": "A species living only in cities"}, {"value": "C", "label": "Any rare native species"}, {"value": "D", "label": "Every abundant native species"}]}, {"id": "q10", "question": "Which of these is a Ramsar wetland in Kerala?", "options": [{"value": "A", "label": "Vembanad-Kol Wetland"}, {"value": "B", "label": "Silent Valley National Park"}, {"value": "C", "label": "Wayanad Wildlife Sanctuary"}, {"value": "D", "label": "Eravikulam National Park"}]}, {"id": "q11", "question": "What is the purpose of a wildlife corridor?", "options": [{"value": "A", "label": "Replace all protected areas"}, {"value": "B", "label": "Prevent seed dispersal"}, {"value": "C", "label": "Separate populations permanently"}, {"value": "D", "label": "Connect habitat patches and facilitate organism movement"}]}, {"id": "q12", "question": "Which satellite-derived index is commonly used to assess vegetation greenness?", "options": [{"value": "A", "label": "BOD"}, {"value": "B", "label": "pH"}, {"value": "C", "label": "Shannon index"}, {"value": "D", "label": "NDVI"}]}, {"id": "q13", "question": "Which aquatic insect group includes many species sensitive to freshwater pollution?", "options": [{"value": "A", "label": "Cockroaches"}, {"value": "B", "label": "Mayfly nymphs"}, {"value": "C", "label": "Adult mosquitoes"}, {"value": "D", "label": "Adult houseflies"}]}, {"id": "q14", "question": "Eutrophication is most directly associated with:", "options": [{"value": "A", "label": "A decrease in all dissolved minerals"}, {"value": "B", "label": "A sudden increase in ocean salinity"}, {"value": "C", "label": "Formation of coral reefs"}, {"value": "D", "label": "Excess nutrient enrichment of water"}]}, {"id": "q15", "question": "Which is an example of in-situ conservation?", "options": [{"value": "A", "label": "Protecting a species in its natural habitat"}, {"value": "B", "label": "Keeping animals in a zoo"}, {"value": "C", "label": "Growing plants outside their natural range"}, {"value": "D", "label": "Storing seeds in a seed bank"}]}, {"id": "q16", "question": "A keystone species is one that:", "options": [{"value": "A", "label": "Occurs only on islands"}, {"value": "B", "label": "Is always the largest predator"}, {"value": "C", "label": "Has a disproportionately large ecological effect"}, {"value": "D", "label": "Is always the most numerous species"}]}, {"id": "q17", "question": "How does energy enter most ecosystems?", "options": [{"value": "A", "label": "Decomposition"}, {"value": "B", "label": "Fermentation"}, {"value": "C", "label": "Predation"}, {"value": "D", "label": "Photosynthesis"}]}, {"id": "q18", "question": "Dense water-hyacinth mats can harm freshwater habitats because they:", "options": [{"value": "A", "label": "Reduce light penetration and can lower oxygen availability"}, {"value": "B", "label": "Stop evaporation completely"}, {"value": "C", "label": "Increase light for submerged plants"}, {"value": "D", "label": "Remove all nutrients permanently"}]}, {"id": "q19", "question": "What is animal pollination?", "options": [{"value": "A", "label": "Filtration of groundwater"}, {"value": "B", "label": "Fixation of atmospheric nitrogen"}, {"value": "C", "label": "Transfer of pollen between flowers by animals"}, {"value": "D", "label": "Breakdown of rocks into soil"}]}, {"id": "q20", "question": "What is habitat fragmentation?", "options": [{"value": "A", "label": "Restoration of a wetland"}, {"value": "B", "label": "Expansion of continuous forest"}, {"value": "C", "label": "Division of continuous habitat into smaller separated patches"}, {"value": "D", "label": "Seasonal migration between habitats"}]}, {"id": "q21", "question": "Which group contains many important pollinators of flowering plants?", "options": [{"value": "A", "label": "Ferns"}, {"value": "B", "label": "Bees"}, {"value": "C", "label": "Freshwater crabs"}, {"value": "D", "label": "Earthworms"}]}, {"id": "q22", "question": "What is the main function of a seed bank in plant conservation?", "options": [{"value": "A", "label": "Remove invasive fish from lakes"}, {"value": "B", "label": "Identify bird migration routes"}, {"value": "C", "label": "Measure daily rainfall"}, {"value": "D", "label": "Store viable seeds for future propagation and conservation"}]}, {"id": "q23", "question": "What does ecological succession describe?", "options": [{"value": "A", "label": "Classification into taxonomic kingdoms"}, {"value": "B", "label": "Change in community composition over time"}, {"value": "C", "label": "An individual's growth from seed to adult"}, {"value": "D", "label": "Daily movement of water in a river"}]}, {"id": "q24", "question": "Why can amphibians be useful bioindicators?", "options": [{"value": "A", "label": "They are unaffected by habitat change"}, {"value": "B", "label": "They live only in deep oceans"}, {"value": "C", "label": "Many have permeable skin and depend on aquatic and terrestrial habitats"}, {"value": "D", "label": "They do not interact with water"}]}, {"id": "q25", "question": "What is a suitable first step before controlling an invasive plant in a wetland?", "options": [{"value": "A", "label": "Introduce another non-native species"}, {"value": "B", "label": "Remove all native vegetation first"}, {"value": "C", "label": "Identify the species and assess its distribution and impacts"}, {"value": "D", "label": "Apply herbicide across the wetland immediately"}]}, {"id": "q26", "question": "What is genetic diversity?", "options": [{"value": "A", "label": "Variation in weather between seasons"}, {"value": "B", "label": "Variety of ecosystem types in a region"}, {"value": "C", "label": "Variation in genetic information within and among populations"}, {"value": "D", "label": "Number of habitat patches in a landscape"}]}, {"id": "q27", "question": "Which gas is released during oxygenic photosynthesis?", "options": [{"value": "A", "label": "Oxygen"}, {"value": "B", "label": "Nitrogen"}, {"value": "C", "label": "Sulphur dioxide"}, {"value": "D", "label": "Methane"}]}, {"id": "q28", "question": "Which field method is commonly used to estimate plant abundance in a defined area?", "options": [{"value": "A", "label": "Acoustic point counts only"}, {"value": "B", "label": "Quadrat sampling"}, {"value": "C", "label": "Mist-netting"}, {"value": "D", "label": "Camera trapping only"}]}, {"id": "q29", "question": "A biodiversity hotspot is generally a region with:", "options": [{"value": "A", "label": "High endemism and substantial habitat loss"}, {"value": "B", "label": "No human settlements"}, {"value": "C", "label": "Many introduced species only"}, {"value": "D", "label": "High annual temperature alone"}]}, {"id": "q30", "question": "Which practice supports reliable citizen-science biodiversity records?", "options": [{"value": "A", "label": "Submit duplicate records as separate species"}, {"value": "B", "label": "Record accurate date, location and supporting evidence"}, {"value": "C", "label": "Move organisms before recording them"}, {"value": "D", "label": "Guess species names without checking"}]}];
-const QUIZ_SIZE = 20;
+const QUIZ_SIZE = 10;
 let questions = [], answers = {}, current = 0, participant = {};
 
 const $ = id => document.getElementById(id);
@@ -81,78 +81,140 @@ function shuffle(list) {
 function showError(message) { $("error").textContent = message; $("error").style.display = "block"; }
 function clearMessages() { $("error").style.display = "none"; $("status").style.display = "none"; }
 
-$("participant-form").addEventListener("submit", event => {
-  event.preventDefault(); clearMessages();
-  // Accept the configured Apps Script deployment URL; reject only an empty or placeholder value.
+function renderAllQuestions() {
   if (!TBARC_WEB_APP_URL || TBARC_WEB_APP_URL.includes("PASTE_YOUR_WEB_APP_URL")) {
-    console.error("TBARC quiz service URL is missing or still contains the setup placeholder.");
     showError("The quiz service is not configured. Please contact TBARC.");
+    $("submit").disabled = true;
     return;
   }
-  console.info("TBARC quiz service URL is configured.");
-  participant = {name:$("participant-name").value.trim(), email:$("participant-email").value.trim()};
   questions = shuffle(QUESTION_BANK).slice(0, QUIZ_SIZE).map(q => ({...q, options:shuffle(q.options)}));
-  answers = {}; current = 0;
-  $("details-panel").hidden = true; $("quiz-panel").hidden = false;
-  renderQuestion(); $("quiz-start").scrollIntoView({behavior:"smooth"});
-});
-function renderQuestion() {
-  const q = questions[current];
-  $("counter").textContent = `Question ${current+1} of ${QUIZ_SIZE}`;
-  $("progress-bar").style.width = `${(current+1)/QUIZ_SIZE*100}%`;
-  const card = document.createElement("article"); card.className = "question";
-  const label = document.createElement("div"); label.className = "q-label"; label.textContent = `QUESTION ${current+1}`;
-  const title = document.createElement("h3"); title.textContent = q.question;
-  const options = document.createElement("div");
-  q.options.forEach(option => {
-    const row = document.createElement("label"); row.className = "option";
-    const radio = document.createElement("input"); radio.type = "radio"; radio.name = "answer"; radio.value = option.value; radio.checked = answers[q.id] === option.value;
-    const text = document.createElement("span"); text.textContent = option.label;
-    radio.addEventListener("change", () => { answers[q.id] = option.value; renderQuestion(); });
-    row.append(radio,text); options.append(row);
+  answers = {};
+  const area = $("question-area");
+  const fragment = document.createDocumentFragment();
+  questions.forEach((q, index) => {
+    const card = document.createElement("article");
+    card.className = "question";
+    const label = document.createElement("div");
+    label.className = "q-label";
+    label.textContent = `QUESTION ${index + 1} OF ${QUIZ_SIZE}`;
+    const title = document.createElement("h3");
+    title.textContent = q.question;
+    const options = document.createElement("div");
+    q.options.forEach(option => {
+      const row = document.createElement("label");
+      row.className = "option";
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = `answer-${q.id}`;
+      radio.value = option.value;
+      radio.addEventListener("change", () => { answers[q.id] = option.value; });
+      const text = document.createElement("span");
+      text.textContent = option.label;
+      row.append(radio, text);
+      options.append(row);
+    });
+    card.append(label, title, options);
+    fragment.append(card);
   });
-  card.append(label,title,options); $("question-area").replaceChildren(card);
-  $("previous").disabled = current === 0;
-  $("next").hidden = current === QUIZ_SIZE-1;
-  $("submit").hidden = current !== QUIZ_SIZE-1;
+  area.replaceChildren(fragment);
+  $("counter").textContent = `${QUIZ_SIZE} questions`;
+  $("progress-bar").style.width = "100%";
 }
-$("previous").addEventListener("click", () => { if(current>0){current--;renderQuestion();} });
-$("next").addEventListener("click", () => {
-  if(!answers[questions[current].id]){showError("Please select an answer before continuing.");return;}
-  current++;renderQuestion();
-});
+
 $("submit").addEventListener("click", () => {
-  if(questions.some(q=>!answers[q.id])){showError("Please answer all 20 questions before submitting.");return;}
+  clearMessages();
+  if (questions.length !== QUIZ_SIZE) { showError("The quiz questions could not be loaded. Please refresh the page."); return; }
+  if (questions.some(q => !answers[q.id])) {
+    showError("Please answer all 10 questions before submitting.");
+    const firstMissing = questions.findIndex(q => !answers[q.id]);
+    const cards = $("question-area").querySelectorAll(".question");
+    if (cards[firstMissing]) cards[firstMissing].scrollIntoView({behavior:"smooth", block:"center"});
+    return;
+  }
   submitAnswers();
 });
-function submitAnswers() {
-  clearMessages(); $("submit").disabled = true; $("submit").textContent = "Submitting…";
+
+function sendQuizRequest(payload, onSuccess) {
   const requestId = "TBQ-" + Date.now() + "-" + Math.random().toString(36).slice(2);
-  const payload = {requestId, name:participant.name, email:participant.email, answers:questions.map(q=>({id:q.id,answer:answers[q.id]}))};
-  const form = document.createElement("form"); form.method="POST"; form.action=TBARC_WEB_APP_URL; form.target="tbarcQuizFrame"; form.hidden=true;
-  const field = document.createElement("textarea"); field.name="payload"; field.value=JSON.stringify(payload); form.append(field); document.body.append(form);
+  payload.requestId = requestId;
+  const form = document.createElement("form");
+  form.method = "POST"; form.action = TBARC_WEB_APP_URL; form.target = "tbarcQuizFrame"; form.hidden = true;
+  const field = document.createElement("textarea"); field.name = "payload"; field.value = JSON.stringify(payload); form.append(field); document.body.append(form);
   let finished = false;
   function receive(event) {
     const data = event.data;
-    if(!data || data.type!=="TBARC_QUIZ_RESPONSE" || data.requestId!==requestId) return;
-    finished = true; window.removeEventListener("message",receive); form.remove();
-    $("submit").disabled=false; $("submit").textContent="Submit answers →";
-    if(data.ok) renderResult(data.result); else showError(data.message || "The quiz could not be processed. Please try again.");
+    if (!data || data.type !== "TBARC_QUIZ_RESPONSE" || data.requestId !== requestId) return;
+    finished = true; window.removeEventListener("message", receive); form.remove();
+    if (data.ok) onSuccess(data.result);
+    else { showError(data.message || "The quiz could not be processed. Please contact TBARC if you are unsure whether it was submitted."); resetSubmitControls(); }
   }
-  window.addEventListener("message",receive);
-  const timeout = setTimeout(() => {
-    if(finished) return;
-    window.removeEventListener("message",receive);form.remove();
-    $("submit").disabled=false;$("submit").textContent="Submit answers →";
+  window.addEventListener("message", receive);
+  setTimeout(() => {
+    if (finished) return;
+    window.removeEventListener("message", receive); form.remove();
     showError("No confirmation was received. Please contact TBARC before submitting again to avoid duplicate attempts.");
-  },60000);
+    resetSubmitControls();
+  }, 60000);
   form.submit();
 }
+function resetSubmitControls() {
+  $("submit").disabled = false; $("submit").textContent = "Submit answers →";
+  const claimSubmit = $("claim-submit");
+  if (claimSubmit) { claimSubmit.disabled = false; claimSubmit.textContent = "Submit details & receive certificate →"; }
+}
+function submitAnswers() {
+  clearMessages(); $("submit").disabled = true; $("submit").textContent = "Checking your score…";
+  sendQuizRequest({
+    action: "score",
+    answers: questions.map(q => ({id:q.id, answer:answers[q.id]}))
+  }, result => {
+    $("quiz-panel").hidden = true;
+    if (result.certificateEligible) {
+      window.tbarcAttemptToken = result.attemptToken;
+      $("claim-panel").hidden = false;
+      $("claim-panel").scrollIntoView({behavior:"smooth"});
+      renderEligibilitySummary(result);
+    } else {
+      renderResult(result);
+    }
+  });
+}
+$("claim-form").addEventListener("submit", event => {
+  event.preventDefault(); clearMessages();
+  const name = $("participant-name").value.trim();
+  const email = $("participant-email").value.trim();
+  if (!name || !email) { showError("Please enter your name and email address."); return; }
+  $("claim-submit").disabled = true; $("claim-submit").textContent = "Registering certificate…";
+  sendQuizRequest({
+    action: "claim",
+    attemptToken: window.tbarcAttemptToken,
+    name: name,
+    email: email
+  }, result => {
+    $("claim-panel").hidden = true;
+    renderResult(result);
+  });
+});
 function escapeHtml(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function renderEligibilitySummary(r) {
+  $("claim-panel").insertAdjacentHTML("afterbegin",
+    '<div class="certificate" id="eligibility-summary"><strong>Your score: ' + r.score + '/' + r.total + ' (' + r.percentage + '%)</strong><br>You have achieved the qualifying mark of ' + 70 + '%.</div>'
+  );
+}
 function renderResult(r) {
-  $("quiz-panel").hidden=true;$("result").hidden=false;
-  $("result").innerHTML = `<span class="eyebrow" style="color:var(--green)">Your quiz result</span><h2>Thank you, ${escapeHtml(r.name)}!</h2><div class="score">${r.score}/${r.total}</div><p>You scored <strong>${r.percentage}%</strong>.</p><div class="result-stats"><div><strong>${r.correct}</strong><span>Correct answers</span></div><div><strong>${r.incorrect}</strong><span>Incorrect answers</span></div><div><strong>${r.percentage}%</strong><span>Final score</span></div></div><div class="certificate">${r.certificateEligible?"<strong>Congratulations! You qualified for a certificate.</strong><br>Your PDF certificate is attached to the result email.":"<strong>Keep learning!</strong><br>A certificate is issued for scores of 70% or above. Your score report has been emailed."}</div><p class="muted">Result email sent to <strong>${escapeHtml(r.email)}</strong>. Reference: ${escapeHtml(r.referenceId)}</p><button class="btn" onclick="location.reload()">Try another quiz →</button>`;
+  $("quiz-panel").hidden = true; $("claim-panel").hidden = true; $("result").hidden = false;
+  const eligible = !!r.certificateEligible;
+  const title = eligible ? 'Certificate registration successful!' : 'Quiz submitted successfully!';
+  const message = eligible
+    ? '<div class="certificate"><strong>Congratulations! You qualified for a TBARC Biodiversity Quiz certificate.</strong><br>Certificate ID: <strong>' + escapeHtml(r.referenceId) + '</strong><br>Your PDF certificate has been sent to <strong>' + escapeHtml(r.email) + '</strong>.</div>'
+    : '<div class="certificate"><strong>Thank you for completing the TBARC Biodiversity Quiz.</strong><br>The certificate qualifying mark is 70%. Keep learning and try again!</div>';
+  const emailLine = eligible ? '<p class="muted">Certificate email sent to <strong>' + escapeHtml(r.email) + '</strong>.</p>' : '<p class="muted">No personal details were required because the qualifying mark was not reached.</p>';
+  $("result").innerHTML = '<span class="eyebrow" style="color:var(--green)">Your quiz result</span><h2>' + title + '</h2><div class="score">' + r.score + '/' + r.total + '</div><p>You scored <strong>' + r.percentage + '%</strong>.</p><div class="result-stats"><div><strong>' + r.correct + '</strong><span>Correct answers</span></div><div><strong>' + r.incorrect + '</strong><span>Incorrect answers</span></div><div><strong>' + r.percentage + '%</strong><span>Final score</span></div></div>' + message + emailLine + '<button class="btn" onclick="location.reload()">Take another quiz →</button>';
   $("result").scrollIntoView({behavior:"smooth"});
 }
+
+// Select and display the 10-question quiz immediately when the page loads.
+renderAllQuestions();
+
 </script>
 </body></html>
